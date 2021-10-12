@@ -9,5 +9,36 @@
     <link rel="stylesheet" href="./src/css/styles.css" />
     <script type="module" src="./src/js/script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header class="header--container">
+      <h1 class="header__heading">Image Carousel</h1>
+    </header>
+    <main class="main--container">
+      <!-- IMAGE -->
+      <div class="main__img--container">
+        <img src="https://picsum.photos/400" alt="picture" class="main__img" />
+      </div>
+      <!-- INPUTS -->
+      <div class="main__inputs--container">
+        <!-- TRAVERSE -->
+        <div class="main__traverse">
+          <button class="main__button">Previous</button>
+          <div class="main__idx">0</div>
+          <button class="main__button">Next</button>
+        </div>
+        <!-- FIND -->
+        <div class="main__goto">
+          <label for="goto">
+            <input
+              type="text"
+              class="main__input"
+              id="goto"
+              placeholder="Please specify an index"
+            />
+          </label>
+          <button class="main__button">Find</button>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
