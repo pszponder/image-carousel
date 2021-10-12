@@ -1,0 +1,31 @@
+/* ========= */
+/* RESET CSS */
+/* ========= */
+
+/* Set box-sizing to border box and reset default font size to pixels */
+html {
+  box-sizing: border-box;
+
+  font-size: 62.5%;
+}
+
+body {
+  /* Reset font-size of body to be 16px in REM units */
+  font-size: 1.6rem;
+
+  /* Set minimum height of body to be height of the viewport */
+  min-height: 100vh;
+
+  /* Set the minimum width of the body to be 100% of the parent (html element) */
+  min-width: 100%;
+}
+
+/* Remove default margin and padding, allow box-sizing to be inherited */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
