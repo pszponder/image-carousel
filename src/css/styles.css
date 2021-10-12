@@ -1,6 +1,12 @@
 /* ==== */
 /* BODY */
 /* ==== */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* ====== */
 /* HEADER */
@@ -13,15 +19,54 @@
 /* ===== */
 /* IMAGE */
 /* ===== */
+.main__img--container {
+  margin: 1em;
+}
+
+.main__img {
+  border-radius: 1rem;
+}
 
 /* ====== */
 /* INPUTS */
 /* ====== */
 
+button {
+  cursor: pointer;
+}
+
 /* ======== */
 /* TRAVERSE */
 /* ======== */
 
+.main__button {
+  width: 10rem;
+  padding: 1rem;
+}
+
+.main__traverse {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 /* ==== */
 /* FIND */
 /* ==== */
+.goto {
+  margin: 2em;
+
+  /* Flex container */
+  display: flex;
+  justify-content: center;
+}
+
+.goto__input {
+  text-align: center;
+  padding: 0.5em;
+}
+
+.goto__button {
+  padding: 0 1em;
+  margin-left: 0.5em;
+}
