@@ -24,7 +24,7 @@ Utilize a Doubly Linked List data structure to create an image Carousel
 
 ### Screenshot
 
-![](./screenshot.png)
+![](./images/screenshot.png)
 
 ### Links
 
