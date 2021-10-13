@@ -53,7 +53,7 @@ button {
 /* ==== */
 /* FIND */
 /* ==== */
-.goto {
+.find {
   margin: 2em;
 
   /* Flex container */
@@ -61,12 +61,12 @@ button {
   justify-content: center;
 }
 
-.goto__input {
+.find__input {
   text-align: center;
   padding: 0.5em;
 }
 
-.goto__button {
+.find__button {
   padding: 0 1em;
   margin-left: 0.5em;
 }
