@@ -24,7 +24,7 @@ Utilize a Doubly Linked List data structure to create an image Carousel
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
@@ -93,6 +93,7 @@ I think it would be fun to implement some of the other methods such as the shift
 ### Useful resources
 
 - [Wes Bos - Modules](https://wesbos.com/javascript/14-es-modules-and-structuring-larger-apps/78-modules) - Wes Bos has amazing tutorials and notes. I learned everything I needed about modules from this article.
+
 - [Lorem Picsum](https://picsum.photos/images) - I used this website to generate the photos used in the app. This is a very handy app to generate random images.
 
 ## Author
