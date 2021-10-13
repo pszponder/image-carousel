@@ -16,15 +16,19 @@
     <main class="main--container">
       <!-- IMAGE -->
       <div class="main__img--container">
-        <img src="https://picsum.photos/400" alt="picture" class="main__img" />
+        <img
+          src="https://picsum.photos/id/1/400"
+          alt="picture"
+          class="main__img"
+        />
       </div>
       <!-- INPUTS -->
       <div class="main__inputs--container">
         <!-- TRAVERSE -->
         <div class="main__traverse">
-          <button class="main__button">Previous</button>
+          <button class="main__button" id="prev">Previous</button>
           <div class="main__idx">0</div>
-          <button class="main__button">Next</button>
+          <button class="main__button" id="next">Next</button>
         </div>
         <!-- FIND -->
         <div class="goto">
@@ -36,7 +40,7 @@
               placeholder="Please specify an index..."
             />
           </label>
-          <button class="goto__button">Find</button>
+          <button class="goto__button" id="find">Find</button>
         </div>
       </div>
     </main>
