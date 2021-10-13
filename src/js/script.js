@@ -70,28 +70,6 @@ import DoublyLinkedList, { Node } from "./DoublyLinkedListCircular.js";
     },
   };
 
-  // // Create a function to update the index value between the previous and next buttons
-  // function updateIdx(idx) {
-  //   // Select the index DOM element
-  //   const indexElem = document.querySelector(".main__idx");
-
-  //   indexElem.innerText = `${idx}`;
-  // }
-
-  // // Create a function to update the image based on a passed in URL
-  // function updateImage(url) {
-  //   // Select the image DOM element
-  //   const img = document.querySelector("img");
-
-  //   // Update the img src with url
-  //   img.src = url;
-  // }
-
-  // // Create a function to update the value of the pointer based on the passed in direction
-  // function movePtr(direction) {
-  //   direction === "prev" ? (ptr = ptr.prev) : (ptr = ptr.next);
-  // }
-
   // ============================
   // TRAVERSING THE DLL: BACKWARD
   // ============================
