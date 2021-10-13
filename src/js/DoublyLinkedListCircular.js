@@ -12,7 +12,7 @@ export default class DoublyLinkedList {
     this.head = null;
     this.tail = null;
     this.size = 0;
-    this.maxSize = maxSize || 10;
+    this.maxSize = maxSize || null;
   }
 
   // Prepend a node to the DLL
