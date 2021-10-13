@@ -1,4 +1,4 @@
-# Frontend Mentor - Tip calculator app solution
+# Image Carousel
 
 This is a solution to
 
@@ -16,99 +16,86 @@ This is a solution to
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
 
-Users should be able to:
-
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Calculate the correct tip and total cost of the bill per person
+Utilize a Doubly Linked List data structure to create an image Carousel
 
 ### Screenshot
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/pszponder/image-carousel](https://github.com/pszponder/image-carousel)
+- Live Site URL: [https://pszponder.github.io/image-carousel/](https://pszponder.github.io/image-carousel/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- JS Modules
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+#### Circular Doubly Linked List
 
-To see how you can add code snippets, see below:
+I have created a Doubly Linked List in the past but I have never implemented a circularly linked list. It turns out that it is pretty easy to convert a standard linked list to a circular one. All I needed to do is to update the references of the head and tail pointers to point to one another at the end of my pop, shift, push and unshift methods.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+```js
+// Connect the head to the tail
+this.head.prev = this.tail;
+
+// Connect the tail to the head
+this.tail.next = this.head;
 ```
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+Feel free to refer to my DoublyLinkedListCircular.js file to view the full doubly linked list data structure implementation.
+
+#### JS ES6 Modules
+
+I learned to use JS ES6 Modules. In order to use a module, you need to declare the type as module for the script file in the HTML
+
+```html
+<script type="module" src="./src/js/script.js"></script>
+```
+
+To Export functions or classes from one JS file to another, use the `export` keyword in front of the function or class that you wish to export to another file. Then use the `import` keyword in the file you wish to import the exported class, function or variable to.
+
+Ex. Using the export keyword to export the Node class
+
+```js
+export class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+    this.prev = null;
+  }
 }
 ```
 
+Ex. Importing the Node class
+
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+import { Node } from "./DoublyLinkedListCircular.js";
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Notice the curly braces wrapped around the Node keyword, this is because when exporting, unless you use the `default` keyword, you are exporting the item with a specific name.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I think it would be fun to implement some of the other methods such as the shift, pop and reverse methods into the app to demonstrate how those methods could work in a real world application.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Wes Bos - Modules](https://wesbos.com/javascript/14-es-modules-and-structuring-larger-apps/78-modules) - Wes Bos has amazing tutorials and notes. I learned everything I needed about modules from this article.
 
 ## Author
 
 - Website - [Piotr Szponder](https://github.com/pszponder)
 - Frontend Mentor - [@pszponder](https://www.frontendmentor.io/profile/pszponder)
 - Twitter - [@PSzponder](https://twitter.com/PSzponder)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
