@@ -8,14 +8,20 @@ export class Node {
 }
 
 export default class DoublyLinkedList {
-  constructor() {
+  constructor(maxSize) {
     this.head = null;
     this.tail = null;
     this.size = 0;
+    this.maxSize = maxSize || 10;
   }
 
   // Prepend a node to the DLL
   unshift(value) {
+    // Check if maxSize has been reached
+    if (this.size === this.maxSize) {
+      return -1;
+    }
+
     // Instantiate a new node
     const newNode = new Node(value);
 
@@ -49,6 +55,11 @@ export default class DoublyLinkedList {
 
   // Append a node to the DLL
   push(value) {
+    // Check if maxSize has been reached
+    if (this.size === this.maxSize) {
+      return -1;
+    }
+
     // Instantiate a new node
     const newNode = new Node(value);
 
@@ -220,6 +231,11 @@ export default class DoublyLinkedList {
 
   // Add a node at a specified index
   insert(idx, value) {
+    // Check if maxSize has been reached
+    if (this.size === this.maxSize) {
+      return -1;
+    }
+
     // If idx <= 0, unshift
     if (idx <= 0) {
       return this.unshift(value);
@@ -349,13 +365,13 @@ export default class DoublyLinkedList {
     do {
       // log currentNode.prev.value to console
       console.log("----------");
-      console.log("Prev:", currentNode.prev?.value || "null");
+      console.log("Prev:", currentNode.prev.value);
 
       // log currentNode.value to console
       console.log("Node:", currentNode.value);
 
       // log currentNode.next.value to console
-      console.log("Next:", currentNode.next?.value || "null");
+      console.log("Next:", currentNode.next.value);
 
       // update currentNode to currentNode.next
       currentNode = currentNode.next;
