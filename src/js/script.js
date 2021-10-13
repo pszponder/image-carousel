@@ -45,27 +45,52 @@ import DoublyLinkedList, { Node } from "./DoublyLinkedListCircular.js";
   // TRAVERSING THE DLL: HELPER FUNCTIONS
   // ====================================
 
-  // Create a function to update the index value between the previous and next buttons
-  function updateIdx(idx) {
-    // Select the index DOM element
-    const indexElem = document.querySelector(".main__idx");
+  // Group all helper functions in a util object
+  const util = {
+    // Create a function to update the index value between the previous and next buttons
+    updateIdx: function (idx) {
+      // Select the index DOM element
+      const indexElem = document.querySelector(".main__idx");
 
-    indexElem.innerText = `${idx}`;
-  }
+      indexElem.innerText = `${idx}`;
+    },
 
-  // Create a function to update the image based on a passed in URL
-  function updateImage(url) {
-    // Select the image DOM element
-    const img = document.querySelector("img");
+    // Create a function to update the image based on a passed in URL
+    updateImage: function (url) {
+      // Select the image DOM element
+      const img = document.querySelector("img");
 
-    // Update the img src with url
-    img.src = url;
-  }
+      // Update the img src with url
+      img.src = url;
+    },
 
-  // Create a function to update the value of the pointer based on the passed in direction
-  function movePtr(direction) {
-    direction === "prev" ? (ptr = ptr.prev) : (ptr = ptr.next);
-  }
+    // Create a function to update the value of the pointer based on the passed in direction
+    movePtr: function (direction) {
+      direction === "prev" ? (ptr = ptr.prev) : (ptr = ptr.next);
+    },
+  };
+
+  // // Create a function to update the index value between the previous and next buttons
+  // function updateIdx(idx) {
+  //   // Select the index DOM element
+  //   const indexElem = document.querySelector(".main__idx");
+
+  //   indexElem.innerText = `${idx}`;
+  // }
+
+  // // Create a function to update the image based on a passed in URL
+  // function updateImage(url) {
+  //   // Select the image DOM element
+  //   const img = document.querySelector("img");
+
+  //   // Update the img src with url
+  //   img.src = url;
+  // }
+
+  // // Create a function to update the value of the pointer based on the passed in direction
+  // function movePtr(direction) {
+  //   direction === "prev" ? (ptr = ptr.prev) : (ptr = ptr.next);
+  // }
 
   // ============================
   // TRAVERSING THE DLL: BACKWARD
@@ -74,16 +99,16 @@ import DoublyLinkedList, { Node } from "./DoublyLinkedListCircular.js";
   // Create an event handler for the previous button
   function handlePrevBtn() {
     // Move the pointer back
-    movePtr("prev");
+    util.movePtr("prev");
 
     // Extract the index and url at ptr using object deconstruction
     const { idx, url } = ptr.value;
 
     // Update the index
-    updateIdx(idx);
+    util.updateIdx(idx);
 
     // Update the carousel's image
-    updateImage(url);
+    util.updateImage(url);
   }
 
   // Add event listener to Previous Button
@@ -96,16 +121,16 @@ import DoublyLinkedList, { Node } from "./DoublyLinkedListCircular.js";
   // Create an event handler for the next button
   function handleNextBtn() {
     // Move the pointer back
-    movePtr("next");
+    util.movePtr("next");
 
     // Extract the index and url at ptr using object deconstruction
     const { idx, url } = ptr.value;
 
     // Update the index
-    updateIdx(idx);
+    util.updateIdx(idx);
 
     // Update the carousel's image
-    updateImage(url);
+    util.updateImage(url);
   }
 
   // Add event listener to Next Button
@@ -132,10 +157,10 @@ import DoublyLinkedList, { Node } from "./DoublyLinkedListCircular.js";
     const { idx, url } = ptr.value;
 
     // Update the index
-    updateIdx(idx);
+    util.updateIdx(idx);
 
     // Update the carousel's image
-    updateImage(url);
+    util.updateImage(url);
 
     // Clear the input
     idxInput.value = "";
@@ -149,5 +174,5 @@ import DoublyLinkedList, { Node } from "./DoublyLinkedListCircular.js";
   // =======================
 
   // On page load, load the 1st image at the head
-  updateImage(ptr.value.url);
+  util.updateImage(ptr.value.url);
 })();
